@@ -96,10 +96,10 @@ WSGI_APPLICATION = 'DjangoTemplateProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'docker-psql-db',
-        'USER': 'docker-psql-user',
+        'NAME': 'psqldb',
+        'USER': 'psqluser',
         'PASSWORD': 'psql1234',
-        'HOST': 'docker_psql_container',
+        'HOST': 'psql_container',
         'PORT': '5432',
     }
 }
