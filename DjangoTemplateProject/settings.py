@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 
     'django.contrib.humanize',
+    
+    'DjangoTemplateApplication',
 ]
 
 MIDDLEWARE = [
