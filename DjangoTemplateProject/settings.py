@@ -25,7 +25,7 @@ SECRET_KEY = '97vi+m*)sd(6o^v=l=t501^y+67%b4sag)$k5r@nf72nz(dd*d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1"]
 
 
 # Application definition
@@ -37,6 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'django.contrib.sites',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +58,16 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'DjangoTemplateProject.urls'
+
+SITE_ID = 1
+
+AUTHENTICATION_BACKENDS = (
+        'django.contrib.auth.backends.ModelBackend',
+        'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+LOGIN_REDIRECT_URL = '/'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 
 TEMPLATES = [
     {
@@ -75,8 +93,12 @@ WSGI_APPLICATION = 'DjangoTemplateProject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'docker-psql-db',
+        'USER': 'docker-psql-user',
+        'PASSWORD': 'psql1234',
+        'HOST': 'docker_psql_container',
+        'PORT': '5432',
     }
 }
 
@@ -118,3 +140,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
