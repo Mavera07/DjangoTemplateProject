@@ -1,3 +1,12 @@
+/djangoTemplateProject__sahinbatmaz__version_1/djangoTemplateApplication__sahinbatmaz__version_1/migrations/*
+/djangoTemplateProject__sahinbatmaz__version_1/db.sqlite3
+*.pyc
+**/__pycache__/
+# /djangoTemplateProject__sahinbatmaz__version_1/djangoTemplateProject__sahinbatmaz__version_1/settings.py
+
+#######################################
+### Default gitignore              ###
+#######################################
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
