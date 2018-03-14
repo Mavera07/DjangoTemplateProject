@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+    DjangoTemplateProject_c:
+        container_name: DjangoTemplateProject_c
+        image: DjangoTemplateProject_i
+        ports: 
+            - 8000:8000
+
+    DjangoTemplateProject_postgres_c:
+        container_name: DjangoTemplateProject_postgres_c
+        image: DjangoTemplateProject_postgres_i
+        volumes:
+            - DjangoTemplateProject_postgresql-volume:/var/lib/postgresql/9.5/main
+
+volumes:
+    DjangoTemplateProject_postgresql-volume:
+        external: true
