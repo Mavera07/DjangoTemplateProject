@@ -26,27 +26,28 @@ def replaceTextInFile(file_absolute_path, oldtext, newtext):
     with open(file_absolute_path, 'w') as f:
         f.write(filedata)
 
-def replaceApplicationName(projpath, newappname):
-    os.rename(projpath+"/DjangoTemplateApplication",projpath+"/"+newappname)
+def replaceApplicationName(projpath, oldappname, newappname):
+    os.rename(projpath+"/"+oldappname,projpath+"/"+newappname)
 
-def replaceProjectName(projpath, newprojname):
-    parentpath = os.path.abspath(os.path.join(projpath, os.pardir))
-    os.rename(projpath+"/DjangoTemplateProject",projpath+"/"+newprojname)
-    os.rename(projpath, parentpath+"/"+newprojname)
+def replaceProjectName(projpath, oldprojname, newprojname):
+    projparentpath = os.path.abspath(os.path.join(projpath, os.pardir))
+    os.rename(projpath+"/"+oldprojname,projpath+"/"+newprojname)
+    os.rename(projpath, projparentpath+"/"+newprojname)
 
 def nthParent(path,n):
     result = os.sep.join(path.split(os.sep)[:-n])
     return result
 
+
+initialProjectName  = "DjangoTemplateProject"
+initialApplicationName = "DjangoTemplateApplication"
+
 currentfilepath = os.path.dirname(os.path.abspath(__file__))
-projparentpath = print(nthParent(currentfilepath,3))
+projparentpath = nthParent(currentfilepath,3)
+projpath = nthParent(currentfilepath,2)
 
-print(nthParent(currentfilepath,2))
-print(nthParent(currentfilepath,3))
-print(nthParent(currentfilepath,4))
-
-#replaceTextInDjangoFiles(sys.argv[1], "DjangoTemplateProject" ,sys.argv[2])
-#replaceTextInDjangoFiles(sys.argv[1], "DjangoTemplateApplication" ,sys.argv[3])
-#replaceApplicationName(sys.argv[1], sys.argv[3])
-#replaceProjectName(sys.argv[1], sys.argv[2])
+replaceTextInDjangoFiles(projpath, initialProjectName ,sys.argv[1])
+replaceTextInDjangoFiles(projpath, initialApplicationName ,sys.argv[2])
+replaceApplicationName(projpath, initialApplicationName, sys.argv[2])
+replaceProjectName(projpath, initialProjectName, sys.argv[1])
 
