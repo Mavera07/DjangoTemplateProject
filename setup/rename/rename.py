@@ -34,8 +34,19 @@ def replaceProjectName(projpath, newprojname):
     os.rename(projpath+"/DjangoTemplateProject",projpath+"/"+newprojname)
     os.rename(projpath, parentpath+"/"+newprojname)
 
-replaceTextInDjangoFiles(sys.argv[1], "DjangoTemplateProject" ,sys.argv[2])
-replaceTextInDjangoFiles(sys.argv[1], "DjangoTemplateApplication" ,sys.argv[3])
-replaceApplicationName(sys.argv[1], sys.argv[3])
-replaceProjectName(sys.argv[1], sys.argv[2])
+def nthParent(path,n):
+    result = os.sep.join(path.split(os.sep)[:-n])
+    return result
+
+currentfilepath = os.path.dirname(os.path.abspath(__file__))
+projparentpath = print(nthParent(currentfilepath,3))
+
+print(nthParent(currentfilepath,2))
+print(nthParent(currentfilepath,3))
+print(nthParent(currentfilepath,4))
+
+#replaceTextInDjangoFiles(sys.argv[1], "DjangoTemplateProject" ,sys.argv[2])
+#replaceTextInDjangoFiles(sys.argv[1], "DjangoTemplateApplication" ,sys.argv[3])
+#replaceApplicationName(sys.argv[1], sys.argv[3])
+#replaceProjectName(sys.argv[1], sys.argv[2])
 
