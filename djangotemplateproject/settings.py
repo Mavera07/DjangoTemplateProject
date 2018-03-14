@@ -99,7 +99,7 @@ DATABASES = {
         'NAME': 'psqldb',
         'USER': 'psqluser',
         'PASSWORD': 'psql1234',
-        'HOST': 'psql_container',
+        'HOST': 'djangotemplateproject_postgres_c',
         'PORT': '5432',
     }
 }
