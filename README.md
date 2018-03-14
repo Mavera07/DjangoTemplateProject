@@ -1,1 +1,1 @@
-# DjangoTemplateProject
+# djangotemplateproject

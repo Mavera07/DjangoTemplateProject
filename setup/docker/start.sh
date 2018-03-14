@@ -1,6 +1,6 @@
-docker volume create --name DjangoTemplateProject_postgresql-volume
-docker build -f ./Dockerfile-postgres -t DjangoTemplateProject_postgres_i ../../../DjangoTemplateProject
+docker volume create --name djangotemplateproject_postgresql-volume
+docker build -f ./Dockerfile-postgres -t djangotemplateproject_postgres_i ../../../djangotemplateproject
 
-docker build -f ./Dockerfile-python -t DjangoTemplateProject_i ../../../DjangoTemplateProject
+docker build -f ./Dockerfile-python -t djangotemplateproject_i ../../../djangotemplateproject
 
 docker-compose up -d

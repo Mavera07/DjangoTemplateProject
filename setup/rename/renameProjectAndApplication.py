@@ -39,8 +39,8 @@ def nthParent(path,n):
     return result
 
 
-initialProjectName  = "DjangoTemplateProject"
-initialApplicationName = "DjangoTemplateApplication"
+initialProjectName  = "djangotemplateproject"
+initialApplicationName = "djangotemplateapplication"
 
 newProjectName = sys.argv[1]
 newApplicationName = sys.argv[2]
