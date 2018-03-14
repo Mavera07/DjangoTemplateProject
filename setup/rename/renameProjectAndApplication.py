@@ -42,12 +42,14 @@ def nthParent(path,n):
 initialProjectName  = "DjangoTemplateProject"
 initialApplicationName = "DjangoTemplateApplication"
 
+newProjectName = sys.argv[1]
+newApplicationName = sys.argv[2]
+
 currentfilepath = os.path.dirname(os.path.abspath(__file__))
-projparentpath = nthParent(currentfilepath,3)
 projpath = nthParent(currentfilepath,2)
 
-replaceTextInDjangoFiles(projpath, initialProjectName ,sys.argv[1])
-replaceTextInDjangoFiles(projpath, initialApplicationName ,sys.argv[2])
-replaceApplicationName(projpath, initialApplicationName, sys.argv[2])
-replaceProjectName(projpath, initialProjectName, sys.argv[1])
+replaceTextInDjangoFiles(projpath, initialProjectName ,newProjectName)
+replaceTextInDjangoFiles(projpath, initialApplicationName ,newApplicationName)
+replaceApplicationName(projpath, initialApplicationName, newApplicationName)
+replaceProjectName(projpath, initialProjectName, newProjectName)
 
