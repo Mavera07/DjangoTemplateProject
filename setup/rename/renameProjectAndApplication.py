@@ -34,8 +34,8 @@ def replaceApplicationName(projpath, oldappname, newappname):
         break
     
     for xdir in xdirs:
+        replaceApplicationName(projpath+"/"+xdir,oldappname,newappname)
         if(xdir == oldappname):
-            replaceApplicationName(projpath+"/"+oldappname,oldappname,newappname)
             os.rename(projpath+"/"+oldappname,projpath+"/"+newappname)
 
     # os.rename(projpath+"/"+oldappname,projpath+"/"+newappname)
