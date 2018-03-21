@@ -27,7 +27,18 @@ def replaceTextInFile(file_absolute_path, oldtext, newtext):
         f.write(filedata)
 
 def replaceApplicationName(projpath, oldappname, newappname):
-    os.rename(projpath+"/"+oldappname,projpath+"/"+newappname)
+    xdirs = [];
+    for (dirpath, dirnames, filenames) in os.walk(projpath):
+        xdirs.extend(dirnames)
+        if(".git" in xdirs): xdirs.remove(".git")
+        break
+    
+    for xdir in xdirs:
+        if(xdir == oldappname):
+            replaceApplicationName(projpath+"/"+oldappname,oldappname,newappname)
+            os.rename(projpath+"/"+oldappname,projpath+"/"+newappname)
+
+    # os.rename(projpath+"/"+oldappname,projpath+"/"+newappname)
 
 def replaceProjectName(projpath, oldprojname, newprojname):
     projparentpath = os.path.abspath(os.path.join(projpath, os.pardir))
