@@ -45,9 +45,17 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 
     'django.contrib.humanize',
+
+    'djangobower',
     
     'djangotemplateapplication',
 ]
+
+BOWER_INSTALLED_APPS = (
+    'jquery',
+    'underscore',
+    'bootstrap',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -143,3 +151,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+BOWER_COMPONENTS_ROOT = BASE_DIR
