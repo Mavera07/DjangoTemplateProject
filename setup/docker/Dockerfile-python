@@ -15,6 +15,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY ./ ./djangoproject/
 WORKDIR /usr/src/app/djangoproject
 
+RUN python ./setup/rename/renameBowerPackages.py &&\
+    python manage.py bower_install --allow-root
+
 CMD sleep 5s &&\
 
     python manage.py migrate &&\
@@ -25,8 +28,5 @@ CMD sleep 5s &&\
           import User; \ 
           User.objects.create_superuser('admin', 'admin@example.com', 'admin') \
          " | python manage.py shell &&\
-
-   
-    python manage.py bower_install --allow-root &&\
 
     python manage.py runserver 0.0.0.0:8000

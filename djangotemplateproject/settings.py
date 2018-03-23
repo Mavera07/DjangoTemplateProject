@@ -47,14 +47,13 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
 
     'djangobower',
-    
+
+    'djangobaseapplication',    
     'djangotemplateapplication',
 ]
 
 BOWER_INSTALLED_APPS = (
-    'jquery',
-    'underscore',
-    'bootstrap',
+    'bower_installed_apps_mark',
 )
 
 MIDDLEWARE = [
@@ -151,4 +150,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-BOWER_COMPONENTS_ROOT = BASE_DIR
+BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'djangobaseapplication/static/djangobaseapplication')
