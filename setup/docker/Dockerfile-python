@@ -18,7 +18,9 @@ WORKDIR /usr/src/app/djangoproject
 RUN python ./setup/rename/renameBowerPackages.py &&\
     python manage.py bower_install --allow-root
 
-CMD python manage.py migrate &&\
+CMD sleep 5s &&\
+
+    python manage.py migrate &&\
     python manage.py makemigrations &&\
     python manage.py migrate &&\
 
