@@ -38,17 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'djangotemplateapplication',
+
+    'django.contrib.humanize',
     'django.contrib.sites',
 
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
 
-    'django.contrib.humanize',
-
     'djangobower',
-
-    'djangotemplateapplication',
 ]
 
 BOWER_INSTALLED_APPS = (
@@ -80,7 +79,7 @@ ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [], # [os.path.join(BASE_DIR, 'djangotemplateapplication', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
