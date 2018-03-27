@@ -4,6 +4,9 @@ from django.http import HttpResponse
 import yaml
 import os
 
+from django.contrib.auth.decorators import login_required
+
+@login_required
 def index(request):
     currentfilepath = os.path.dirname(os.path.abspath(__file__))
     projpath = nthParent(currentfilepath,1)
