@@ -12,7 +12,11 @@ services:
         image: djangotemplateproject_i
         ports:
             - 8000:8000
+        volumes:
+            - djangotemplateproject_migrations-volume:/usr/src/app/djangoproject/djangotemplateapplication/migrations
 
 volumes:
     djangotemplateproject_postgresql-volume:
+        external: true
+    djangotemplateproject_migrations-volume:
         external: true
