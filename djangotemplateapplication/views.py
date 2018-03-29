@@ -12,7 +12,8 @@ def index(request):
     projpath = nthParent(currentfilepath,1)
     config = yaml.safe_load(open(projpath+"/resources/config.yml"))
 
-    return HttpResponse("Hello, world. You're at the polls index."+config["xvar"])
+    return render(request,"djangotemplateapplication/pages/page1.html",{})
+    # return HttpResponse("Hello, world. You're at the polls index."+config["xvar"])
 
 def nthParent(path,n):
     result = os.sep.join(path.split(os.sep)[:-n])
