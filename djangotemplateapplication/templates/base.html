@@ -26,23 +26,23 @@
 
   <body>
 
+    <div class="container-fluid">
 
-      <nav class="navbar navbar-inverse" style="margin-left:-15px; margin-right:-15px;">
-        <div class="container-fluid">
+      <nav class="navbar navbar-inverse navbar-expand-sm" style="margin-left:-15px; margin-right:-15px;">
           <div class="navbar-header">
             <a  style="color:#ffffff; font-weight:bold;" class="navbar-brand" href="/">djangotemplateproject</a>
           </div>
 
           <ul class="nav navbar-nav">
             {% if user.is_authenticated %}
-              <li><a style="color:#ffffff; " href="/">Home</a></li>
-              <li><a style="color:#ffffff; " href="/page1">Page1</a></li>
+              <li class="nav-item"><a class="nav-link"  style="color:#ffffff; " href="/">Home</a></li>
+              <li class="nav-item"><a class="nav-link"  style="color:#ffffff; " href="/page1">Page1</a></li>
             {% endif %}
           </ul>
 
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right justify-content-end">
             {% if user.is_authenticated %}
-              <li class="dropdown">
+              <li class="nav-item dropdown">
                 <button class="btn btn-info dropdown-toggle" style="margin-top:7px; margin-right:7px;" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                   {{user.username}} <span class="caret"></span>
                 </button>
@@ -56,8 +56,8 @@
             {% endif %}
           </ul>
 
-        </div>
       </nav>
+    </div>
 
       {% block content %}
 
