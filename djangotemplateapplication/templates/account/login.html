@@ -1,27 +1,23 @@
 {% extends "account/base.html" %}
 
 {% block content %}
+  <script src="/static/account/js/login.js"></script>
   <link href="/static/account/css/login.css" rel="stylesheet"/>
 
-  <div class="container-fluid " >
-    <h1 class="text-center">Login</h1>
+  <div class="block-content-login">
+      <div class="container-fluid" >
+        <h1 class="text-center">Login</h1>
 
-    <form class="login form-signin" method="POST" action="{% url 'account_login' %}">
-      {% csrf_token %}
+        <form class="form-signin" method="POST" action="{% url 'account_login' %}">
+          {% csrf_token %}
 
-      <div class="to-be-formed  ">
-        {{ form.as_p }}
+          <div class="to-be-formed">
+            {{ form.as_p }}
+          </div>
+          <button class="primaryAction btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        </form>
+
       </div>
-      <button class="primaryAction btn btn-lg btn-primary btn-block" type="submit">Login</button>
-    </form>
-
   </div>
 
-  <script type="text/javascript">
-    $(function(){
-      $("body").css("padding-top","0px");
-      $("#id_login ").addClass("form-control");
-      $("#id_password ").addClass("form-control");
-    });
-  </script>
 {% endblock %}
