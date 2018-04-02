@@ -1,0 +1,18 @@
+FROM python:3
+
+RUN apt-get -y update
+
+RUN apt-get -y install nodejs &&\
+    apt-get -y install npm &&\
+    ln -s /usr/bin/nodejs /usr/bin/node &&\
+    npm install -g bower
+
+WORKDIR /usr/src/app
+
+RUN pip install --no-cache-dir Django==2.0.3 django-allauth==0.35.0 psycopg2-binary==2.7.4 PyYAML==3.12 django-bower==5.2.0
+
+COPY ./ ./djangoproject/
+WORKDIR /usr/src/app/djangoproject
+
+RUN python ./setup/rename/renameBowerPackages.py &&\
+    python manage.py bower_install --allow-root

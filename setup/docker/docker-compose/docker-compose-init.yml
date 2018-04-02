@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+    djangotemplateproject_init_postgres_c:
+        container_name: djangotemplateproject_postgres_c
+        image: djangotemplateproject_init_postgres_i
+        volumes:
+            - djangotemplateproject_postgresql-volume:/var/lib/postgresql/9.5/main
+
+    djangotemplateproject_init_bower_c:
+        container_name: djangotemplateproject_init_bower_c
+        image: djangotemplateproject_init_bower_i
+        volumes:
+            - djangotemplateproject_bower-volume:/usr/src/app/djangoproject/djangotemplateapplication/static/bower_components
+
+    djangotemplateproject_init_django_c:
+        container_name: djangotemplateproject_init_django_c
+        image: djangotemplateproject_init_django_i
+
+volumes:
+    djangotemplateproject_postgresql-volume:
+        external: true
+    djangotemplateproject_bower-volume:
+        external: true
