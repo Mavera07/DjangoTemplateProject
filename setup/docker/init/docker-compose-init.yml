@@ -11,7 +11,7 @@ services:
         container_name: djangotemplateproject_init_bower_c
         image: djangotemplateproject_init_bower_i
         volumes:
-            - djangotemplateproject_bower-volume:/usr/src/app/djangoproject/djangotemplateapplication/static/bower_components
+            - djangotemplateproject_bower-volume:/bower_components
 
 volumes:
     djangotemplateproject_postgresql-volume:
