@@ -8,4 +8,4 @@ docker build -f ./init/Dockerfile-init-bower -t djangotemplateproject_init_bower
 docker-compose -f ./init/docker-compose-init.yml up -d
 
 docker rm -f djangotemplateproject_init_bower_c
-docker rm -f djangotemplateproject_postgres_init_c
+docker rm -f djangotemplateproject_init_postgres_c
