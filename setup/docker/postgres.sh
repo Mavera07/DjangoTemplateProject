@@ -1,3 +1,5 @@
-docker build -f ./run/Dockerfile-postgres -t djangotemplateproject_postgres_i ../../../djangotemplateproject
+DIR=$PWD/`dirname $0`
 
-docker-compose -f ./run/docker-compose-run-postgres.yml up -d
+docker build -f $DIR/run/Dockerfile-postgres -t djangotemplateproject_postgres_i $DIR/../../../djangotemplateproject
+
+docker-compose -f $DIR/run/docker-compose-run-postgres.yml up -d

@@ -1,0 +1,6 @@
+version: '2'
+
+services:
+    djangotemplateproject_django_c:
+        container_name: djangotemplateproject_django_c
+        image: djangotemplateproject_init_django_i

@@ -8,6 +8,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY ./ ./djangoproject/
 WORKDIR /usr/src/app/djangoproject
 
-CMD python manage.py migrate &&\
+CMD sleep 20s &&\
+
+    python manage.py migrate &&\
 
     python manage.py shell < ./setup/docker/init/scripts/django-create-admin.py
+
+    python manage.py runserver
