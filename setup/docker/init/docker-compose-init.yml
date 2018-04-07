@@ -13,6 +13,11 @@ services:
         volumes:
             - djangotemplateproject_bower-volume:/bower_components
 
+    djangotemplateproject_init_django_c:
+        container_name: djangotemplateproject_init_django_c
+        image: djangotemplateproject_init_django_i
+
+
 volumes:
     djangotemplateproject_postgresql-volume:
         external: true
