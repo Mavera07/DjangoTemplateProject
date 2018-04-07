@@ -15,7 +15,7 @@ docker-compose -f $DIR/init/docker-compose-init-bower.yml up -d
 
 sleep 10s
 
-docker rm -f djangotemplateproject_init_bower_c
+docker rm -f djangotemplateproject_bower_c
 docker rm -f djangotemplateproject_django_c
 docker rm -f djangotemplateproject_postgres_c
 

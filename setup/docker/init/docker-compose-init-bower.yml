@@ -1,8 +1,8 @@
 version: '2'
 
 services:
-    djangotemplateproject_init_bower_c:
-        container_name: djangotemplateproject_init_bower_c
+    djangotemplateproject_bower_c:
+        container_name: djangotemplateproject_bower_c
         image: djangotemplateproject_init_bower_i
         volumes:
             - djangotemplateproject_bower-volume:/bower_components
