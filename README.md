@@ -30,7 +30,7 @@ ___
 
 In this template project, mentioned first time steps are handled and overhead part of the Django framework is skipped.
 
-Javascript libraries are downloaded with bower.
+Django configurations are prepared, including database settings and Javascript libraries are downloaded with bower.
 
 In addition to that, to run and deploy the project, Docker is used. Django and Postgres dockerfiles are implemented.
 - Python packages are installed within the docker image.
