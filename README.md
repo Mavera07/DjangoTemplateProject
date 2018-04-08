@@ -64,6 +64,7 @@ bash ./setup/docker/3_django.sh
 When there is a change in code, ./setup/docker/**3_django.sh** script must be run.
 
 #### Python Libraries
+
 Python libraries are managed with ./resources/requirements.txt file.
 
 When a library is added or removed in requirements.txt file, ./setup/docker/**3_django.sh** script must be run.
@@ -77,3 +78,15 @@ When a library is added or removed in bower.txt file, ./setup/docker/**0_bower.s
 With this, docker volume for bower will be updated.
 
 Bower volume is mapped to ./djangotemplateapplication/static/bower_components/ directory. Installed libraries reside in the folder. In html files, library source paths are written as "/static/bower_components/lib_path/lib.js".
+
+#### Database Export and Import
+
+Database export is easy with docker volumes. Docker volumes path in Linux is /var/lib/docker/volumes.
+
+Database data path is /var/lib/docker/volumes/djangotemplateproject_postgresql-volume. Just copy and save the directory.
+
+___
+
+Database import is also easy. Copy saved directory to /var/lib/docker/volumes/djangotemplateproject_postgresql-volume.
+
+And then run ./setup/docker/**2_postgres.sh** script. 
