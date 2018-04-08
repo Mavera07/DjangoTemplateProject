@@ -30,6 +30,8 @@ ___
 
 In this template project, mentioned first time steps are handled and overhead part of the Django framework is skipped.
 
+Javascript libraries are downloaded with bower.
+
 In addition to that, to run and deploy the project, Docker is used. Django and Postgres dockerfiles are implemented.
 - Python packages are installed within the docker image.
 - Volumes are created for database, django migrations and javascript libraries.
@@ -59,19 +61,19 @@ bash ./setup/docker/3_django.sh
 
 #### Implementation
 
-When there is a change in code, ./setup/docker/3_django.sh script must be run.
+When there is a change in code, ./setup/docker/**3_django.sh** script must be run.
 
 #### Python Libraries
 Python libraries are managed with ./resources/requirements.txt file.
 
-When a library is added or removed in requirements.txt file, ./setup/docker/3_django.sh script must be run.
+When a library is added or removed in requirements.txt file, ./setup/docker/**3_django.sh** script must be run.
 
 #### Javascript Libraries
 
 Javascript libraries are managed with ./resources/bower.txt file. 
 Valid entry formats are "lib_name" and "lib_name#version". 
 
-When a library is added or removed in bower.txt file, ./setup/docker/0_bower.sh script must be run. 
+When a library is added or removed in bower.txt file, ./setup/docker/**0_bower.sh** script must be run. 
 With this, docker volume for bower will be updated.
 
 Bower volume is mapped to ./djangotemplateapplication/static/bower_components/ directory. Installed libraries reside in the folder. In html files, library source paths are written as "/static/bower_components/lib_path/lib.js".
