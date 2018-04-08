@@ -4,7 +4,7 @@
 
 The project is designed based on the Django framework. Postgresql and Docker are used in the project.
 
-#### Django
+<br/>
 
 Django can be a very useful framework. 
 - Django simplifies database operations. 
@@ -14,7 +14,7 @@ Django can be a very useful framework.
 - Django simplifies url management.
 - For UI implementation, Django has a template language.
 
-___
+<br/>
 
 However, to prepare the system for the first time, there are lots of things to do.
 - Prepare python virtual environment and manage requirements
@@ -26,7 +26,7 @@ However, to prepare the system for the first time, there are lots of things to d
 - Download javascript libraries
 - Implement index page; html file, url mapping, view url directing
 
-___
+<br/>
 
 In this template project, mentioned first time steps are handled and overhead part of the Django framework is skipped.
 
@@ -84,6 +84,8 @@ Bower volume is mapped to ./djangotemplateapplication/static/bower_components/ d
 Database export is easy with docker volumes. Docker volumes path in Linux is /var/lib/docker/volumes.
 
 Database data path is /var/lib/docker/volumes/djangotemplateproject_postgresql-volume. Just copy and save the directory.
+
+<br/>
 
 Database import is also easy. Copy saved directory to /var/lib/docker/volumes/djangotemplateproject_postgresql-volume.
 
