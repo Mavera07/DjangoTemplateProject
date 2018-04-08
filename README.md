@@ -85,8 +85,6 @@ Database export is easy with docker volumes. Docker volumes path in Linux is /va
 
 Database data path is /var/lib/docker/volumes/djangotemplateproject_postgresql-volume. Just copy and save the directory.
 
-___
-
 Database import is also easy. Copy saved directory to /var/lib/docker/volumes/djangotemplateproject_postgresql-volume.
 
 And then run ./setup/docker/**2_postgres.sh** script. 
