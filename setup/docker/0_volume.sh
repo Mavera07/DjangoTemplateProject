@@ -9,11 +9,13 @@ docker build -f $DIR/init/Dockerfile-init-postgres -t djangotemplateproject_init
 docker build -f $DIR/init/Dockerfile-init-django -t djangotemplateproject_init_django_i $DIR/../../../djangotemplateproject
 docker build -f $DIR/init/Dockerfile-init-bower -t djangotemplateproject_init_bower_i $DIR/../../../djangotemplateproject
 
+
 docker-compose -f $DIR/init/docker-compose-init-postgres.yml up -d
+sleep 5s
 docker-compose -f $DIR/init/docker-compose-init-django.yml up -d
+sleep 5s
 docker-compose -f $DIR/init/docker-compose-init-bower.yml up -d
 
-sleep 10s
 
 docker rm -f djangotemplateproject_bower_c
 docker rm -f djangotemplateproject_django_c
