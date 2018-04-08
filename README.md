@@ -1,10 +1,10 @@
 # djangotemplateproject
 
-## Introduction
+## 1. Introduction
 
 The project is designed based on the Django framework. Postgresql and Docker are used in the project.
 
-#### Django
+<br/>
 
 Django can be a very useful framework. 
 - Django simplifies database operations. 
@@ -14,7 +14,7 @@ Django can be a very useful framework.
 - Django simplifies url management.
 - For UI implementation, Django has a template language.
 
-___
+<br/>
 
 However, to prepare the system for the first time, there are lots of things to do.
 - Prepare python virtual environment and manage requirements
@@ -26,7 +26,7 @@ However, to prepare the system for the first time, there are lots of things to d
 - Download javascript libraries
 - Implement index page; html file, url mapping, view url directing
 
-___
+<br/>
 
 In this template project, mentioned first time steps are handled and overhead part of the Django framework is skipped.
 
@@ -38,17 +38,17 @@ In addition to that, to run and deploy the project, Docker is used. Django and P
 - With database volume, database can be backed up and deployed to another machine easily.
 - Project deployment is automatized.
 
-## Prerequisites
+## 2. Prerequisites
 - Docker
 
-## Preprocessing
+## 3. Preprocessing
 
 - Set project and application name
 ```bash
 python ./setup/rename/renameProjectAndApplication.py project_name application_name
 ```
 
-## Installation
+## 4. Installation
 
 ```bash
 bash ./setup/docker/0_bower.sh
@@ -57,7 +57,7 @@ bash ./setup/docker/2_postgres.sh
 bash ./setup/docker/3_django.sh
 ```
 
-## Guidelines
+## 5. Guidelines
 
 #### Implementation
 
@@ -85,7 +85,7 @@ Database export is easy with docker volumes. Docker volumes path in Linux is /va
 
 Database data path is /var/lib/docker/volumes/djangotemplateproject_postgresql-volume. Just copy and save the directory.
 
-___
+<br/>
 
 Database import is also easy. Copy saved directory to /var/lib/docker/volumes/djangotemplateproject_postgresql-volume.
 
