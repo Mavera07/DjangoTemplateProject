@@ -9,9 +9,9 @@ docker build -f $DIR/init/Dockerfile-init-django -t djangotemplateproject_init_d
 
 
 docker-compose -f $DIR/init/docker-compose-init-postgres.yml up -d
-sleep 5s
+sleep 10s
 docker-compose -f $DIR/init/docker-compose-init-django.yml up -d
-sleep 5s
+sleep 10s
 
 
 docker rm -f djangotemplateproject_django_c
