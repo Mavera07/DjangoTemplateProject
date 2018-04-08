@@ -1,6 +1,6 @@
 # djangotemplateproject
 
-## Introduction
+## 1. Introduction
 
 The project is designed based on the Django framework. Postgresql and Docker are used in the project.
 
@@ -38,17 +38,17 @@ In addition to that, to run and deploy the project, Docker is used. Django and P
 - With database volume, database can be backed up and deployed to another machine easily.
 - Project deployment is automatized.
 
-## Prerequisites
+## 2. Prerequisites
 - Docker
 
-## Preprocessing
+## 3. Preprocessing
 
 - Set project and application name
 ```bash
 python ./setup/rename/renameProjectAndApplication.py project_name application_name
 ```
 
-## Installation
+## 4. Installation
 
 ```bash
 bash ./setup/docker/0_bower.sh
@@ -57,7 +57,7 @@ bash ./setup/docker/2_postgres.sh
 bash ./setup/docker/3_django.sh
 ```
 
-## Guidelines
+## 5. Guidelines
 
 #### Implementation
 
