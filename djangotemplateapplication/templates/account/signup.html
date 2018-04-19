@@ -1,8 +1,11 @@
-{% extends "base.html" %}
-{% load static %}
-{% load i18n %}
+{% extends "djangotemplateapplication/extendables/base.html" %}
 
-{% block head_title %}{% trans "Signup" %}{% endblock %}
+{% block navbar %}
+     {% include "djangotemplateapplication/includables/navbar-version1.html" %}
+{% endblock %}
+
+
+{% block head_title %Signup{% endblock %}
 
 {% block content %}
 

@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+  {# ###### #}
+  {# PART 1 #}
+  {# ###### #}
+
+  <head>
+    <meta charset="utf-8">
+    <title>djangotemplateproject</title>
+
+    {# INCLUDE JAVASCRIPT  #}
+    {% include "djangotemplateapplication/includables/js-packages.html" %}
+
+    {# INCLUDE CSS         #}
+    <link href="/static/djangotemplateapplication/css/main.css" rel="stylesheet"/>
+
+  </head>
+
+
+
+  {# ###### #}
+  {# PART 2 #}
+  {# ###### #}
+
+  <body>
+    {% block navbar %}{% endblock %}
+    {% block content %}{% endblock %}
+  </body>
+
+
+</html>
