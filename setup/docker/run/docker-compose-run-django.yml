@@ -7,7 +7,7 @@ services:
         ports:
             - 8000:8000
         volumes:
-            - djangotemplateproject_migrations-volume:/usr/src/app/djangoproject/djangotemplateapplication/migrations
+            - djangotemplateproject_migrations-volume:/usr/src/app/djangoproject/migrations
             - djangotemplateproject_bower-volume:/usr/src/app/djangoproject/djangotemplateapplication/static/bower_components
 
 volumes:

@@ -149,3 +149,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'djangotemplateapplication/static')
+
+MIGRATION_MODULES = {'djangotemplateapplication': 'migrations'}
