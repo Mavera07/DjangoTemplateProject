@@ -4,9 +4,12 @@
 <html>
 
   <head>
-    {% include "djangotemplateapplication/includables/head.html" %}
+    {% include "djangotemplateapplication/includables/head/head-base.html" %}
+    {% include "djangotemplateapplication/includables/head/head-pkg.html" %}
+    {% include "djangotemplateapplication/includables/head/head-js.html" %}
+    {% include "djangotemplateapplication/includables/head/head-css.html" %}
   </head>
-  
+
 
   <body>
     {% block navbar %}{% endblock %}
