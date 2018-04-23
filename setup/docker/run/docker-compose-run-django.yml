@@ -9,9 +9,12 @@ services:
         volumes:
             - djangotemplateproject_migrations-volume:/usr/src/app/djangoproject/migrations
             - djangotemplateproject_bower-volume:/usr/src/app/djangoproject/static/bower_components
+            - djangotemplateproject_development-volume:/usr/src/app/djangoproject/djangotemplateapplication
 
 volumes:
     djangotemplateproject_migrations-volume:
         external: true
     djangotemplateproject_bower-volume:
+        external: true
+    djangotemplateproject_development-volume:
         external: true
