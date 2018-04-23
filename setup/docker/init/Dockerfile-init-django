@@ -5,7 +5,9 @@ WORKDIR /usr/src/app
 COPY ./resources/requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY ./ ./djangoproject/
+COPY ./   ./djangoproject/
+RUN mkdir ./djangoproject/migrations &&\
+    touch ./djangoproject/migrations/__init__.py
 WORKDIR /usr/src/app/djangoproject
 
 CMD python manage.py migrate &&\
