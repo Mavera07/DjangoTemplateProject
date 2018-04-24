@@ -8,11 +8,9 @@ services:
             - 8000:8000
         volumes:
             - djangotemplateproject_migrations-volume:/usr/src/app/djangoproject/migrations
-            - djangotemplateproject_bower-volume:/usr/src/app/djangoproject/static/bower_components
+            - ../../../volumes/bower_components:/usr/src/app/djangoproject/static/bower_components
             - ../../../djangotemplateapplication:/usr/src/app/djangoproject/djangotemplateapplication
 
 volumes:
     djangotemplateproject_migrations-volume:
-        external: true
-    djangotemplateproject_bower-volume:
         external: true
