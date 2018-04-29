@@ -3,4 +3,5 @@ docker network prune -f
 docker volume prune -f
 
 DIR=$PWD/`dirname $0`
-rm -rf $DIR/../../volumes/*
+rm -rf $DIR/../../volumes/migrations
+rm -rf $DIR/../../volumes/bower_components
