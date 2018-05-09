@@ -141,6 +141,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static') # Used for manage.py collectstatic
 
-MIGRATION_MODULES = {'djangotemplateapplication': 'migrations'}
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'mappings', 'static'),) # Used for static files that are not tied to a particular app
+MIGRATION_MODULES = {'djangotemplateapplication': 'mappings.migrations'}
