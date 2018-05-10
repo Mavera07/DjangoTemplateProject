@@ -5,3 +5,4 @@ docker volume prune -f
 DIR=$PWD/`dirname $0`
 rm -rf $DIR/../../volumes/migrations
 rm -rf $DIR/../../volumes/bower_components
+rm -rf $DIR/../../volumes/postgres_main

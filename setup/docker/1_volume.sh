@@ -9,11 +9,11 @@ docker build -f $DIR/init/Dockerfile-init-django -t djangotemplateproject_init_d
 
 
 docker-compose -f $DIR/init/docker-compose-init-postgres.yml up -d
-echo "Wait for 20s"
-sleep 20s
+echo "Wait for 5s"
+sleep 5s
 docker-compose -f $DIR/init/docker-compose-init-django.yml up -d
-echo "Wait for 20s"
-sleep 20s
+echo "Wait for 5s"
+sleep 5s
 
 
 docker rm -f djangotemplateproject_django_c
@@ -26,3 +26,7 @@ docker network rm init_default
 rm -rf $DIR/../../volumes/migrations
 cp -r /var/lib/docker/volumes/djangotemplateproject_migrations-volume/_data $DIR/../../volumes/migrations
 docker volume rm -f djangotemplateproject_migrations-volume
+
+rm -rf $DIR/../../volumes/postgres_main
+mv /var/lib/docker/volumes/djangotemplateproject_postgresql-volume/_data $DIR/../../volumes/postgres_main
+docker volume rm -f djangotemplateproject_postgresql-volume
