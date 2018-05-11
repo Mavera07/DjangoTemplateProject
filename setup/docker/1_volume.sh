@@ -9,11 +9,11 @@ docker build -f $DIR/init/Dockerfile-init-django -t djangotemplateproject_init_d
 
 
 docker-compose -f $DIR/init/docker-compose-init-postgres.yml up -d
-echo "Wait for 5s"
-sleep 5s
+echo "Wait for 20s"
+sleep 20s
 docker-compose -f $DIR/init/docker-compose-init-django.yml up -d
-echo "Wait for 5s"
-sleep 5s
+echo "Wait for 20s"
+sleep 20s
 
 
 docker rm -f djangotemplateproject_django_c

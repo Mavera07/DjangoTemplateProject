@@ -7,6 +7,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY ./   ./djangoproject/
 
+RUN mkdir ./djangoproject/mappings &&\
+    mkdir ./djangoproject/mappings/migrations
+
 WORKDIR /usr/src/app/djangoproject
 
 CMD python manage.py makemigrations &&\
