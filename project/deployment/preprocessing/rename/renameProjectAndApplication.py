@@ -26,7 +26,7 @@ def replaceTextInFile(file_absolute_path, oldtext, newtext):
     with open(file_absolute_path, 'w') as f:
         f.write(filedata)
 
-def replaceApplicationName(projpath, oldappname, newappname):
+def replaceFolderNameOfDjangoFiles(projpath, oldappname, newappname):
     xdirs = [];
     for (dirpath, dirnames, filenames) in os.walk(projpath):
         xdirs.extend(dirnames)
@@ -34,16 +34,11 @@ def replaceApplicationName(projpath, oldappname, newappname):
         break
     
     for xdir in xdirs:
-        replaceApplicationName(projpath+"/"+xdir,oldappname,newappname)
+        replaceFolderNameOfDjangoFiles(projpath+"/"+xdir,oldappname,newappname)
         if(xdir == oldappname):
             os.rename(projpath+"/"+oldappname,projpath+"/"+newappname)
 
     # os.rename(projpath+"/"+oldappname,projpath+"/"+newappname)
-
-def replaceProjectName(projpath, oldprojname, newprojname):
-    projparentpath = os.path.abspath(os.path.join(projpath, os.pardir))
-    os.rename(projpath+"/"+oldprojname,projpath+"/"+newprojname)
-    os.rename(projpath, projparentpath+"/"+newprojname)
 
 def nthParent(path,n):
     result = os.sep.join(path.split(os.sep)[:-n])
@@ -57,10 +52,13 @@ newProjectName = sys.argv[1]
 newApplicationName = sys.argv[2]
 
 currentfilepath = os.path.dirname(os.path.abspath(__file__))
-projpath = nthParent(currentfilepath,2)
+projpath = nthParent(currentfilepath,4)
 
 replaceTextInDjangoFiles(projpath, initialProjectName ,newProjectName)
 replaceTextInDjangoFiles(projpath, initialApplicationName ,newApplicationName)
-replaceApplicationName(projpath, initialApplicationName, newApplicationName)
-replaceProjectName(projpath, initialProjectName, newProjectName)
+replaceFolderNameOfDjangoFiles(projpath, initialApplicationName, newApplicationName)
+replaceFolderNameOfDjangoFiles(projpath, initialProjectName, newProjectName)
+
+projparentpath = os.path.abspath(os.path.join(projpath, os.pardir))
+os.rename(projpath, projparentpath+"/"+newProjectName)
 
