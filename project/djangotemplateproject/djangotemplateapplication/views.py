@@ -25,7 +25,7 @@ def page1(request):
 
 def getConfig():
     projpath = getProjectPath()
-    config = yaml.safe_load(open(projpath + "/resources/config.yml"))
+    config = yaml.safe_load(open(projpath + "/project/resources/config/config.yml"))
     return config
     # print(config["xvar"])
 
