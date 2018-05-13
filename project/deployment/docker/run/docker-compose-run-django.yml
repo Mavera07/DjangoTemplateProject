@@ -7,6 +7,6 @@ services:
         ports:
             - 8000:8000
         volumes:
-            - ../../../volumes/bower_components:/usr/src/app/djangoproject/mappings/static/bower_components
-            - ../../../volumes/migrations:/usr/src/app/djangoproject/mappings/migrations
-            - ../../../djangotemplateapplication:/usr/src/app/djangoproject/djangotemplateapplication
+            - ../../../resources/volumes/bower_components:/usr/src/app/djangoproject/project/djangotemplateproject/mappings/static/bower_components
+            - ../../../resources/volumes/migrations:/usr/src/app/djangoproject/project/djangotemplateproject/mappings/migrations
+            - ../../../djangotemplateproject/djangotemplateapplication:/usr/src/app/djangoproject/project/djangotemplateproject/djangotemplateapplication

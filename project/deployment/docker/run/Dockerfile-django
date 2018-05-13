@@ -2,15 +2,15 @@ FROM python:3
 
 WORKDIR /usr/src/app
 
-COPY ./resources/requirements.txt ./
+COPY ./project/deployment/packagefiles/requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY ./   ./djangoproject/
 
-RUN mkdir ./djangoproject/mappings &&\
-    mkdir ./djangoproject/mappings/migrations
+RUN mkdir ./djangoproject/project/djangotemplateproject/mappings &&\
+    mkdir ./djangoproject/project/djangotemplateproject/mappings/migrations
 
-WORKDIR /usr/src/app/djangoproject
+WORKDIR /usr/src/app/djangoproject/project/djangotemplateproject
 
 CMD python manage.py makemigrations &&\
     python manage.py migrate &&\

@@ -5,5 +5,5 @@ services:
         container_name: djangotemplateproject_postgres_c
         image: djangotemplateproject_postgres_i
         volumes:
-            - ../../../volumes/postgres_main:/var/lib/postgresql/9.5/main
+            - ../../../resources/volumes/postgres_main:/var/lib/postgresql/9.5/main
 

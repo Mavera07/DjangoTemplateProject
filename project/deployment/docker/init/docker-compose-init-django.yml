@@ -5,7 +5,7 @@ services:
         container_name: djangotemplateproject_django_c
         image: djangotemplateproject_init_django_i
         volumes:
-            - djangotemplateproject_migrations-volume:/usr/src/app/djangoproject/mappings/migrations
+            - djangotemplateproject_migrations-volume:/usr/src/app/djangoproject/project/djangotemplateproject/mappings/migrations
 
 
 volumes:
