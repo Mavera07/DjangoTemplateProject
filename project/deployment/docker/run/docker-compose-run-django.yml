@@ -8,5 +8,6 @@ services:
             - 8000:8000
         volumes:
             - ../../../resources/volumes/bower_components:/usr/src/app/djangoproject/project/djangotemplateproject/mappings/static/bower_components
+            - ../../../resources/vendor:/usr/src/app/djangoproject/project/djangotemplateproject/mappings/static/vendor
             - ../../../resources/volumes/migrations:/usr/src/app/djangoproject/project/djangotemplateproject/mappings/migrations
             - ../../../djangotemplateproject/djangotemplateapplication:/usr/src/app/djangoproject/project/djangotemplateproject/djangotemplateapplication
