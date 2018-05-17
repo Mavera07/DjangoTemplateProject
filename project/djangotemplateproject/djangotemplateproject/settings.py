@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'djangotemplateapplication',
+    'accounts',
 
     'django.contrib.humanize',
     'django.contrib.sites',

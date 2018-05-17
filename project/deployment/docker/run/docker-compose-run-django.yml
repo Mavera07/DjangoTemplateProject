@@ -11,3 +11,4 @@ services:
             - ../../../resources/vendor:/usr/src/app/djangoproject/project/djangotemplateproject/mappings/static/vendor
             - ../../../resources/volumes/migrations:/usr/src/app/djangoproject/project/djangotemplateproject/mappings/migrations
             - ../../../djangotemplateproject/djangotemplateapplication:/usr/src/app/djangoproject/project/djangotemplateproject/djangotemplateapplication
+            - ../../../djangotemplateproject/accounts:/usr/src/app/djangoproject/project/djangotemplateproject/accounts
