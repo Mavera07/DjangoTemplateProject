@@ -12,8 +12,8 @@ docker-compose -f $DIR/init/docker-compose-init-postgres.yml up -d
 echo "Wait for 20s"
 sleep 20s
 docker-compose -f $DIR/init/docker-compose-init-django.yml up -d
-echo "Wait for 20s"
-sleep 20s
+echo "Wait for 40s"
+sleep 40s
 
 
 docker rm -f djangotemplateproject_django_c
