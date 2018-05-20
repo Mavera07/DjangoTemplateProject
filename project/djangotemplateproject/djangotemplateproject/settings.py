@@ -29,7 +29,9 @@ ALLOWED_HOSTS = ["127.0.0.1"]
 
 
 # Application definition
-
+# IMPORTANT : The order of the applications is important.
+#           : For example, if an app is listed before allauth.accounts,
+#           : a template in the app can overrides templates of allauth.accounts.
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'djangotemplateapplication',
-    'accounts',
+    'extension_allauth',
 
     'django.contrib.humanize',
     'django.contrib.sites',
