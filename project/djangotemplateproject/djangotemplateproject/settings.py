@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'djangotemplateapplication',
-    'extension_allauth',
+    'allauth_extension',
 
     'django.contrib.humanize',
     'django.contrib.sites',

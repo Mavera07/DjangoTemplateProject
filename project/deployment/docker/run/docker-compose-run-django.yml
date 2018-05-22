@@ -9,4 +9,4 @@ services:
         volumes:
             - ../../../resources/volumes/migrations:/usr/src/app/djangoproject/project/djangotemplateproject/mappings/migrations
             - ../../../djangotemplateproject/djangotemplateapplication:/usr/src/app/djangoproject/project/djangotemplateproject/djangotemplateapplication
-            - ../../../djangotemplateproject/extension_allauth:/usr/src/app/djangoproject/project/djangotemplateproject/extension_allauth
+            - ../../../djangotemplateproject/allauth_extension:/usr/src/app/djangoproject/project/djangotemplateproject/allauth_extension
