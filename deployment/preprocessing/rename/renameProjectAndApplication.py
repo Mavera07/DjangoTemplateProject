@@ -52,7 +52,7 @@ newProjectName = sys.argv[1]
 newApplicationName = sys.argv[2]
 
 currentfilepath = os.path.dirname(os.path.abspath(__file__))
-projpath = nthParent(currentfilepath,4)
+projpath = nthParent(currentfilepath,3)
 
 replaceTextInDjangoFiles(projpath, initialProjectName ,newProjectName)
 replaceTextInDjangoFiles(projpath, initialApplicationName ,newApplicationName)
