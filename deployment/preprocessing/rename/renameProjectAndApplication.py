@@ -48,17 +48,18 @@ def nthParent(path,n):
 initialProjectName  = "djangotemplateproject"
 initialApplicationName = "djangotemplateapplication"
 
-newProjectName = sys.argv[1]
-newApplicationName = sys.argv[2]
+newRepoName = sys.argv[1]
+newProjectName = sys.argv[2]
+newApplicationName = sys.argv[3]
 
 currentfilepath = os.path.dirname(os.path.abspath(__file__))
-projpath = nthParent(currentfilepath,3)
+repopath = nthParent(currentfilepath,3)
 
-replaceTextInDjangoFiles(projpath, initialProjectName ,newProjectName)
-replaceTextInDjangoFiles(projpath, initialApplicationName ,newApplicationName)
-replaceFolderNameOfDjangoFiles(projpath, initialApplicationName, newApplicationName)
-replaceFolderNameOfDjangoFiles(projpath, initialProjectName, newProjectName)
+replaceTextInDjangoFiles(repopath, initialProjectName ,newProjectName)
+replaceTextInDjangoFiles(repopath, initialApplicationName ,newApplicationName)
+replaceFolderNameOfDjangoFiles(repopath, initialApplicationName, newApplicationName)
+replaceFolderNameOfDjangoFiles(repopath, initialProjectName, newProjectName)
 
-projparentpath = os.path.abspath(os.path.join(projpath, os.pardir))
-os.rename(projpath, projparentpath+"/"+newProjectName)
+repoparentpath = os.path.abspath(os.path.join(repopath, os.pardir))
+os.rename(repopath, repoparentpath+"/"+newRepoName)
 
