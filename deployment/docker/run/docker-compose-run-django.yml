@@ -7,6 +7,6 @@ services:
         ports:
             - 8000:8000
         volumes:
-            - ../../../resources/volumes/migrations:/usr/src/app/djangoproject/project/djangotemplateproject/mappings/migrations
-            - ../../../djangotemplateproject/djangotemplateapplication:/usr/src/app/djangoproject/project/djangotemplateproject/djangotemplateapplication
-            - ../../../djangotemplateproject/allauth_extension:/usr/src/app/djangoproject/project/djangotemplateproject/allauth_extension
+            - ../../../resources/volumes/migrations:/usr/src/app/djangoproject/djangotemplateproject/mappings/migrations
+            - ../../../djangotemplateproject/djangotemplateapplication:/usr/src/app/djangoproject/djangotemplateproject/djangotemplateapplication
+            - ../../../djangotemplateproject/allauth_extension:/usr/src/app/djangoproject/djangotemplateproject/allauth_extension

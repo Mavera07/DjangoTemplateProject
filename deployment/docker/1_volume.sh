@@ -4,8 +4,8 @@ docker volume create --name djangotemplateproject_postgresql-volume
 docker volume create --name djangotemplateproject_migrations-volume
 
 
-docker build -f $DIR/init/Dockerfile-init-postgres -t djangotemplateproject_init_postgres_i $DIR/../../../djangotemplateproject
-docker build -f $DIR/init/Dockerfile-init-django -t djangotemplateproject_init_django_i $DIR/../../../djangotemplateproject
+docker build -f $DIR/init/Dockerfile-init-postgres -t djangotemplateproject_init_postgres_i $DIR/../../
+docker build -f $DIR/init/Dockerfile-init-django -t djangotemplateproject_init_django_i $DIR/../../
 
 
 docker-compose -f $DIR/init/docker-compose-init-postgres.yml up -d
